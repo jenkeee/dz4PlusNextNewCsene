@@ -10,14 +10,16 @@ public class MovementCotroller : MonoBehaviour
 
     Vector2 turn;
     private Transform cameraTransform;
+
     void Start()
     {
-        cameraTransform = Camera.main.transform;
+      cameraTransform = Camera.main.transform;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        
 
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
@@ -31,8 +33,8 @@ public class MovementCotroller : MonoBehaviour
         
         turn.x += Input.GetAxis("Mouse X");
         turn.y += Input.GetAxis("Mouse Y");
-        transform.rotation = Quaternion.Euler(turn.y, -turn.x, 0);
-        transform.parent.rotation = Quaternion.Euler(0, -turn.x, 0);
+        transform.rotation = Quaternion.Euler(-turn.y, turn.x, 0);
+        transform.parent.rotation = Quaternion.Euler(0, turn.x, 0);
 
 
         if (isWalking)            

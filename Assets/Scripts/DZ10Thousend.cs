@@ -49,7 +49,7 @@ public class DZ10Thousend : MonoBehaviour
     void Update()
     {
         for (int i = 0; i < maxObg; i++)
-        {
+        {            
             bulletPoolTr.GetChild(i).Rotate(new Vector3(Time.deltaTime * x, y, z));
         }
     }
