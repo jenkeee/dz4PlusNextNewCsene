@@ -10,25 +10,32 @@ public class Spawner : MonoBehaviour
     public Transform SpawnPlace;
 
 
+    private IEnumerator SpawnDelay(int cont)
+    { //while (true)
+        yield return new WaitForSeconds(2);
+    }
+
     void Start()
     {
-        int[] closedPointIndex = new int[EnemyPull.childCount];
+        List<int> closedPointIndex = new List<int>();        
 
         for (int i = 0; i < EnemyPull.childCount; i++)
         {       
             
             var r = Random.Range(0, SpawnPlace.childCount);
-            for (int j = 0; j < closedPointIndex.Length; i++)
+            for (int j = 0; j < closedPointIndex.Count; j++)
             {
-                if (r == closedPointIndex[j])
-                { r = Random.Range(0, SpawnPlace.childCount); }
+                if (closedPointIndex.Contains(r))
+                { r = Random.Range(0, SpawnPlace.childCount) ; }
                 else break;
             }
 
             var enemyObg = EnemyPull.GetChild(i);
             enemyObg.transform.position = SpawnPlace.GetChild(r).transform.position;
-            closedPointIndex[i] = r;
-            enemyObg.gameObject.SetActive(true);            
+            closedPointIndex.Add(r);
+            //closedPointIndex[i] = r;
+            enemyObg.gameObject.SetActive(true);
+           // SpawnDelay(i);
         }
     }
 
@@ -38,8 +45,28 @@ public class Spawner : MonoBehaviour
         
     }
 }
+/*
+int[] closedPointIndex = { 0 };
 
+for (int i = 0; i < EnemyPull.childCount; i++)
+{
 
+    var r = Random.Range(0, SpawnPlace.childCount);
+    for (int j = 0; j < closedPointIndex.Length; j++)
+    {
+        if (r == closedPointIndex[j])
+        { r = Random.Range(0, SpawnPlace.childCount); }
+        else break;
+
+    }
+
+    var enemyObg = EnemyPull.GetChild(i);
+    enemyObg.transform.position = SpawnPlace.GetChild(r).transform.position;
+    closedPointIndex[i] = r;
+    enemyObg.gameObject.SetActive(true);
+    //SpawnDelay(i);
+}
+*/
 /*
  * int[] closedPointIndex = new int[EnemyPull.childCount];
 
