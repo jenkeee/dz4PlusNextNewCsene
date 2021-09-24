@@ -29,7 +29,8 @@ public class Spawner : MonoBehaviour
                 { r = Random.Range(0, SpawnPlace.childCount) ; }
                 else break;
             }
-
+            if (closedPointIndex.Count > 10)
+            { closedPointIndex.Clear(); }
             var enemyObg = EnemyPull.GetChild(i);
             enemyObg.transform.position = SpawnPlace.GetChild(r).transform.position;
             closedPointIndex.Add(r);
