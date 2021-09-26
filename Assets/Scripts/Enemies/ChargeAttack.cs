@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class ChargeAttack : MonoBehaviour
 {
-    
+    /*
 
     public Transform player;
     NavMeshAgent agent;
@@ -25,26 +25,17 @@ public class ChargeAttack : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         RBenemy = GetComponent<Rigidbody>();
-       
+        PlayerDisDetected();
     }
 
-#if UNITY_EDITOR
-   private void OnDrawGizmos()
-    {
-        Vector3 pos = transform.position + Vector3.up;
-        Handles.color = new Color(1, 0, 1, 0.1f);
-        Handles.DrawSolidArc(pos, transform.up, transform.forward, maxAngle, maxRadius);
-        Handles.DrawSolidArc(pos, transform.up, transform.forward, -maxAngle, maxRadius);
 
-    }
-#endif
 
     void FixedUpdate()
     { }
     void LateUpdate() { }
     void Update()
     {
-        if (true)
+        if (ReadyAtk)
         {
             Vector3 napravlenieVzglad = player.transform.position - transform.position;
             transform.rotation = Quaternion.LookRotation(napravlenieVzglad);
@@ -105,5 +96,5 @@ public class ChargeAttack : MonoBehaviour
     {
         ReadyAtk = false;
     }
-
+    */
 }

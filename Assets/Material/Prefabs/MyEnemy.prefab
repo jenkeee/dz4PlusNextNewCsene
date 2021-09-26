@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6561479316923456789}
   - component: {fileID: 2415726622162169707}
   - component: {fileID: 2016270320888001638}
-  - component: {fileID: 3056178935293372415}
+  - component: {fileID: 4710140232512490583}
   m_Layer: 0
   m_Name: MyEnemy
   m_TagString: Enemy
@@ -130,15 +130,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4467388602826763514}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 327fd8cabe7fb5a49ae4de8d1cbfbe5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  distToAttack: 5
-  maxAngle: 30
-  maxRadius: 20
 --- !u!54 &2016270320888001638
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -155,7 +151,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3056178935293372415
+--- !u!114 &4710140232512490583
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,9 +160,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 4467388602826763514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bc5aed777e51c84aa17cb7300d32e8b, type: 3}
+  m_Script: {fileID: 11500000, guid: e856b5af36c66704782d0fe96b03a993, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WaitPlace: {fileID: 0}
+  patrulMode: 0
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 64
+  targetObstacl:
+    serializedVersion: 2
+    m_Bits: 128
+  targetViewRadius: []
+  targetViewFrontAngle: []
+  maxAngle: 30
 --- !u!1 &9144320226889793361
 GameObject:
   m_ObjectHideFlags: 0

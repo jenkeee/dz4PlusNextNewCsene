@@ -6,12 +6,11 @@ using UnityEngine.SceneManagement; // добавим юзинг
 public class m_SceneLoader : MonoBehaviour
 {
     public GameObject PauseMenu;
-    static bool paused = false;
-
+    public bool paused = false;
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);        
+    }
 
 
     public void QuitGame() { Application.Quit(); }
@@ -56,6 +55,7 @@ public class m_SceneLoader : MonoBehaviour
     void Pause()
     {
         Time.timeScale = 0;
+       // SceneManager.SetActiveScene()
         PauseMenu.gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         paused = true;

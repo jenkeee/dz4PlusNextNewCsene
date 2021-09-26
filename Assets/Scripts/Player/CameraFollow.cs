@@ -9,6 +9,7 @@ public class CameraFollow : MonoBehaviour
     public float distanceUp =3;
     public float distanceUp2 = 3;
     public float distanceRight = 3;
+    public GameObject pauseMenu;
     void Start()
     {
 
@@ -22,8 +23,11 @@ public class CameraFollow : MonoBehaviour
          transform.localRotation = Quaternion.Euler(-turn.y, turn.x, 0);*/
         cameraa.transform.position = transform.position + transform.forward * distanceTo + transform.up * distanceUp;
         cameraa.transform.LookAt(transform.position + transform.right * distanceRight);
-
-        if (Input.GetKeyDown(KeyCode.Mouse0)) Cursor.lockState = CursorLockMode.Locked;
+        if (pauseMenu.activeSelf) // пусть курсор не лочится если активно меню
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else if (Input.GetKeyDown(KeyCode.Mouse0)) Cursor.lockState = CursorLockMode.Locked;
 
     }
 }
