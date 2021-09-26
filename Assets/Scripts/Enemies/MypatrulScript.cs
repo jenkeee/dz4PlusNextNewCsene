@@ -10,6 +10,7 @@ public class MypatrulScript : MonoBehaviour
     public Transform WaitPlace;
     NavMeshAgent agent;
     Rigidbody RBenemy;
+    public Animator _animator;
 
     public bool patrulMode;
     [SerializeField] private LayerMask targetMask;
@@ -22,9 +23,10 @@ public class MypatrulScript : MonoBehaviour
     //[SerializeField] float alpha_gizmosSpere =0.1f;
     void Start()
     {
+        _animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
         //WaitPlace = FindObjectOfType<Spawner>().gameObject.transform;
         agent = GetComponent<NavMeshAgent>();
-        RBenemy = GetComponent<Rigidbody>();
+        RBenemy = gameObject.transform.GetChild(0).GetComponent<Rigidbody>();
         agent.SetDestination(WaitPlace.GetChild(Random.Range(0, WaitPlace.childCount)).transform.position);
         
     }
@@ -56,11 +58,12 @@ public class MypatrulScript : MonoBehaviour
 
 #if UNITY_EDITOR
     private void OnDrawGizmos()
-    {
+    {/*
         Handles.color = new Color(1, 0, 1, 0.08f);
         Handles.DrawSolidArc(gameObject.transform.position, transform.up, transform.forward, 360, maxRadius);
         Handles.DrawSolidArc(gameObject.transform.position, transform.up, transform.forward, maxAngle, maxRadius* (2 + 1 / 2));
         Handles.DrawSolidArc(gameObject.transform.position, transform.up, transform.forward, -maxAngle, maxRadius* (2 + 1 / 2));
+        */
     }
 #endif
     private void FixedUpdate()
@@ -74,6 +77,35 @@ public class MypatrulScript : MonoBehaviour
             agent.isStopped = true;
             patrulMode = false;
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(targetViewRadius[0].transform.position - transform.position), Time.deltaTime);
+            for (int i = 0; i < targetViewRadius.Length - 1; i++)
+            {
+                Transform tempTarget = targetViewRadius[i].transform;
+                Vector3 dirToTarget = (tempTarget.position - transform.position).normalized;
+                float targetAngle = Vector3.Angle(transform.forward, dirToTarget);
+
+                Ray ray = new Ray(transform.position, dirToTarget);
+                RaycastHit raycastHit;
+                if (!Physics.Raycast(transform.position + Vector3.up, dirToTarget, targetObstacl))
+                {
+                    if ((-maxAngle) < targetAngle && targetAngle < maxAngle)
+                    {
+                        Debug.DrawRay(transform.position + Vector3.up, dirToTarget * maxRadius * 2, Color.red);
+                        agent.isStopped = true;
+                        patrulMode = false;
+                        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(targetViewRadius[i].transform.position - transform.position), Time.deltaTime);
+                        _animator.SetBool("rdyCharge", true);
+                        // буду через маску обсткл делать проверку. чето все не так
+
+                        if (Physics.Raycast(transform.position, dirToTarget, out raycastHit))
+                        {
+                            if (raycastHit.collider.CompareTag("Player"))
+                            {
+
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         else if (targetViewFrontAngle.Length > 0) // сначала  OverlapSphere меньшего радиуса инче не работает
@@ -96,6 +128,7 @@ public class MypatrulScript : MonoBehaviour
                         agent.isStopped = true;
                         patrulMode = false;
                         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(targetViewFrontAngle[i].transform.position - transform.position), Time.deltaTime);
+                        _animator.SetBool("rdyCharge", true);
                         // буду через маску обсткл делать проверку. чето все не так
 
                         if (Physics.Raycast(transform.position, dirToTarget, out raycastHit))
@@ -114,6 +147,7 @@ public class MypatrulScript : MonoBehaviour
         { //StartCoroutine(Scaning(5));
             agent.isStopped = false;
             patrulMode = true;
+            _animator.SetBool("rdyCharge", false);
             //ChargeAttack.PlayerDisDetected();
         }
     }

@@ -35,7 +35,7 @@ public class Spawner : MonoBehaviour
             enemyObg.transform.position = SpawnPlace.GetChild(r).transform.position;
             closedPointIndex.Add(r);
             //closedPointIndex[i] = r;
-            enemyObg.gameObject.SetActive(true);
+            enemyObg.GetChild(0).gameObject.SetActive(true);
            // SpawnDelay(i);
         }
     }
