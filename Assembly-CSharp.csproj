@@ -53,13 +53,16 @@
     <UnityVersion>2020.3.13f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\ParticleAction.cs" />
     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshModifierVolume.cs" />
     <Compile Include="Assets\Scripts\Player\MovementCotroller.cs" />
     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshSurface.cs" />
     <Compile Include="Assets\Scripts\Enemies\ChargeAttack.cs" />
+    <Compile Include="Assets\Scripts\Enemies\MypatrulScript.cs" />
     <Compile Include="Assets\Scripts\Enemies\Patrul.cs" />
     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshModifier.cs" />
     <Compile Include="Assets\Scripts\Enemies\RoboPatrul.cs" />
+    <Compile Include="Assets\Scripts\Enemies\ParticleController.cs" />
     <Compile Include="Assets\Scripts\UI\m_SceneLoader.cs" />
     <Compile Include="Assets\Scripts\Enemies\Spawner.cs" />
     <Compile Include="Assets\Scripts\Player\CameraFollow.cs" />
@@ -67,7 +70,8 @@
     <Compile Include="Assets\Material\AddOn\RobotSphere\Assets\Scripts\RobotFreeAnim.cs" />
     <Compile Include="Assets\Scripts\HamburgerEvent.cs" />
     <Compile Include="Assets\NavMeshComponents\Scripts\NavMeshLink.cs" />
-    <Compile Include="Assets\Scripts\Enemies\MypatrulScript.cs" />
+    <Compile Include="Assets\Scripts\Music\DontDesttriyBackGround.cs" />
+    <Compile Include="Assets\Scripts\Event\WhatToDo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

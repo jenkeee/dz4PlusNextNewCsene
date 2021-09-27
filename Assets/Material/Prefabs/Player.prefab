@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8471869524135779858}
   - component: {fileID: 8471869524135779856}
   - component: {fileID: 8471869524135779857}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  groundChecker: []
 --- !u!114 &8471869524135779857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,6 +63,7 @@ MonoBehaviour:
   distanceUp: 1.65
   distanceUp2: -2.14
   distanceRight: 0
+  pauseMenu: {fileID: 0}
 --- !u!1 &8471869524340023088
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,7 +76,7 @@ GameObject:
   - component: {fileID: 8471869524340023092}
   - component: {fileID: 8471869524340023093}
   - component: {fileID: 8471869524340023094}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: nose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +172,7 @@ GameObject:
   - component: {fileID: 8471869524402925755}
   - component: {fileID: 8471869524402925748}
   - component: {fileID: 8471869524402925749}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -263,7 +265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8471869524787762303}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: obj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +300,7 @@ GameObject:
   - component: {fileID: 8471869524956147071}
   - component: {fileID: 8471869524956147064}
   - component: {fileID: 8471869524956147065}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +394,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8471869525048340977}
   - component: {fileID: 8471869525048340983}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}

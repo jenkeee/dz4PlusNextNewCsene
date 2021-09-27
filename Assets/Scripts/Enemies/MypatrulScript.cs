@@ -10,7 +10,7 @@ public class MypatrulScript : MonoBehaviour
     public Transform WaitPlace;
     NavMeshAgent agent;
     Rigidbody RBenemy;
-    public Animator _animator;
+    Animator _animator;
 
     public bool patrulMode;
     [SerializeField] private LayerMask targetMask;
@@ -21,8 +21,13 @@ public class MypatrulScript : MonoBehaviour
     float maxRadius=10f;
     [SerializeField] private float maxAngle = 30;
     //[SerializeField] float alpha_gizmosSpere =0.1f;
+
+
+    [SerializeField] public bool test;
+    
     void Start()
     {
+        
         _animator = gameObject.transform.GetChild(0).GetComponent<Animator>();
         //WaitPlace = FindObjectOfType<Spawner>().gameObject.transform;
         agent = GetComponent<NavMeshAgent>();
@@ -32,8 +37,10 @@ public class MypatrulScript : MonoBehaviour
     }
 
     // Update is called once per frame
+
     void Update()
     {
+        
         if (patrulMode)
         {
             RBenemy.isKinematic = true;
@@ -57,14 +64,15 @@ public class MypatrulScript : MonoBehaviour
     }
 
 #if UNITY_EDITOR
+    /*
     private void OnDrawGizmos()
-    {/*
+    {
         Handles.color = new Color(1, 0, 1, 0.08f);
         Handles.DrawSolidArc(gameObject.transform.position, transform.up, transform.forward, 360, maxRadius);
         Handles.DrawSolidArc(gameObject.transform.position, transform.up, transform.forward, maxAngle, maxRadius* (2 + 1 / 2));
         Handles.DrawSolidArc(gameObject.transform.position, transform.up, transform.forward, -maxAngle, maxRadius* (2 + 1 / 2));
-        */
-    }
+        
+    }*/
 #endif
     private void FixedUpdate()
     {
@@ -150,6 +158,7 @@ public class MypatrulScript : MonoBehaviour
             _animator.SetBool("rdyCharge", false);
             //ChargeAttack.PlayerDisDetected();
         }
+        agent.isStopped = test;
     }
 
     public void PatrulEnable() { patrulMode = true; }
