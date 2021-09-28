@@ -18863,9 +18863,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8471869524135779856, guid: 261bc858eacf9b54fb02c602add51e58, type: 3}
-      propertyPath: SetMaskWithPlayer.m_Bits
-      value: 64
+    - target: {fileID: 60675962, guid: 261bc858eacf9b54fb02c602add51e58, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 60675962, guid: 261bc858eacf9b54fb02c602add51e58, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 235
+      objectReference: {fileID: 0}
+    - target: {fileID: 934472082, guid: 261bc858eacf9b54fb02c602add51e58, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 934472082, guid: 261bc858eacf9b54fb02c602add51e58, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 934472082, guid: 261bc858eacf9b54fb02c602add51e58, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 934472082, guid: 261bc858eacf9b54fb02c602add51e58, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8471869524135779857, guid: 261bc858eacf9b54fb02c602add51e58, type: 3}
       propertyPath: cameraa

@@ -8,6 +8,11 @@ public class m_SceneLoader : MonoBehaviour
     public AudioSource audio;
     public GameObject PauseMenu;
     public bool paused = false;
+
+
+
+
+
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);        
