@@ -109,9 +109,9 @@ public class m_SceneLoader : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "3")
+      /* if (scene.name == "3")
             audio.mute = true;
-        else
+        else*/
             audio.mute = false;
     }
 

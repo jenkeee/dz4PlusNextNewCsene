@@ -8,13 +8,14 @@ public class HPbar : MonoBehaviour
 
     public void HPbarCurrent(int a) 
     {
-        //int b = int.Parse((transform.GetChild(0).GetChild(0).GetComponent<RectTransform>().sizeDelta.x).ToString()); // = new Vector2(a, 14)
+
         Vector2 get = transform.GetChild(0).GetChild(0).GetComponent<RectTransform>().sizeDelta;
-        get.x = a *(100/ transform.GetChild(0).GetChild(0).GetComponent<RectTransform>().sizeDelta.x);
+        get.x = a *( transform.GetChild(0).GetChild(0).GetComponent<RectTransform>().sizeDelta.x /100);
+        transform.GetChild(0).GetChild(0).GetComponent<RectTransform>().sizeDelta = get;
         transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text =  a.ToString();
     }
     private void Start()
     {
-        HPbarCurrent(50);
+        HPbarCurrent(33);
     }
 }
