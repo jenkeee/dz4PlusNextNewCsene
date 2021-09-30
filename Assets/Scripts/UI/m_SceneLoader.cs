@@ -8,6 +8,11 @@ public class m_SceneLoader : MonoBehaviour
     public AudioSource audio;
     public GameObject PauseMenu;
     public bool paused = false;
+
+
+
+
+
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);        
@@ -100,11 +105,12 @@ public class m_SceneLoader : MonoBehaviour
         }
 
         SceneManager.sceneLoaded += OnSceneLoaded;
+       // Destroy(this);
     }
-
+    /* на титры буду выключать музыку */
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "3")
+       if (scene.name == "3")
             audio.mute = true;
         else
             audio.mute = false;
@@ -113,6 +119,10 @@ public class m_SceneLoader : MonoBehaviour
     void Destroy()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    public static void RestartLvl() 
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
 
