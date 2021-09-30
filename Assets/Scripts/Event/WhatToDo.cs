@@ -8,15 +8,16 @@ public class WhatToDo : MonoBehaviour
 {
    int curentIndexItem= 0;
 
-    public bool scipTutor;
+    static bool scipTutor;
     public bool finishTutor;
 
 
     void Awake()
     {
-        scipTutor= Settings.getScipTutor();
+        scipTutor =  Settings.getScipTutor();
         finishTutor = Settings.getFinishTutor();
         //finishTutor = scipTutor; // изза !отрицания! условие или требует модернизайцию
+        if (finishTutor)
         scipTutor = finishTutor;
         if (!scipTutor)
         {

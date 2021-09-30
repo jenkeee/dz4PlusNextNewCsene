@@ -834,7 +834,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ec3e227f17ff14438c2d1e2686f1805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: 1
 --- !u!4 &870699374
 Transform:
   m_ObjectHideFlags: 0
@@ -2385,8 +2384,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 870699373}
         m_TargetAssemblyTypeName: Settings, Assembly-CSharp
-        m_MethodName: ScipTutorSetTrue
-        m_Mode: 1
+        m_MethodName: ScipTutorSet
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2407,7 +2406,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1001 &1873690708
 PrefabInstance:
   m_ObjectHideFlags: 0

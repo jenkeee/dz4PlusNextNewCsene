@@ -10,9 +10,9 @@ public class Spawner : MonoBehaviour
     public Transform SpawnPlace;
 
 
-    private IEnumerator SpawnDelay(int cont)
+    private IEnumerator SpawnDelay(int timer)
     { //while (true)
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(timer);
     }
 
     void Start()

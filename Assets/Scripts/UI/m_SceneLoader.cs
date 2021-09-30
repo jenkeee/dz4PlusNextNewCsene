@@ -105,19 +105,24 @@ public class m_SceneLoader : MonoBehaviour
         }
 
         SceneManager.sceneLoaded += OnSceneLoaded;
+       // Destroy(this);
     }
-
+    /* на титры буду выключать музыку */
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-      /* if (scene.name == "3")
+       if (scene.name == "3")
             audio.mute = true;
-        else*/
+        else
             audio.mute = false;
     }
 
     void Destroy()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    public static void RestartLvl() 
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
 

@@ -4,18 +4,21 @@ using UnityEngine;
 
 public class HPbar : MonoBehaviour
 {
-    Transform hp;
+    static Transform hp;
 
-    public void HPbarCurrent(int a) 
+    public static void HPbarCurrent(int a) 
     {
 
-        Vector2 get = transform.GetChild(0).GetChild(0).GetComponent<RectTransform>().sizeDelta;
-        get.x = a *( transform.GetChild(0).GetChild(0).GetComponent<RectTransform>().sizeDelta.x /100);
-        transform.GetChild(0).GetChild(0).GetComponent<RectTransform>().sizeDelta = get;
-        transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text =  a.ToString();
+        Vector2 get = hp.GetChild(0).GetChild(0).GetComponent<RectTransform>().sizeDelta;
+        get.x = a *(hp.GetChild(0).GetChild(0).GetComponent<RectTransform>().sizeDelta.x /100);        
+        hp.GetChild(0).GetChild(0).GetComponent<RectTransform>().sizeDelta = get;
+        if (get.x > 0)
+            hp.GetChild(0).GetChild(0).GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = a.ToString();
+        else hp.GetChild(0).GetChild(0).GetChild(0).GetComponent<TMPro.TextMeshProUGUI>().text = "0";
     }
     private void Start()
     {
-        HPbarCurrent(33);
+        hp = transform;
+        //HPbarCurrent(33);
     }
 }

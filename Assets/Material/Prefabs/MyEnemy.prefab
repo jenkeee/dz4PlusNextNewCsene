@@ -14577,13 +14577,14 @@ GameObject:
   - component: {fileID: 2016270320888001638}
   - component: {fileID: 1258602548084443439}
   - component: {fileID: 863441949}
+  - component: {fileID: 5278229948766434035}
   m_Layer: 0
   m_Name: MyEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1545418400637835550
 Transform:
   m_ObjectHideFlags: 0
@@ -14725,6 +14726,21 @@ MonoBehaviour:
   jumpGo: {fileID: 861994836}
   jumpGo2: {fileID: 870594881}
   fireAs: {fileID: 483201347}
+--- !u!114 &5278229948766434035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4467388602826763514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b347bf64ca8812449db74bbf862ae08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dmg: 25
+  BublForLive: {fileID: 0}
+  timerForLive: 0
 --- !u!1 &9144320226889793361
 GameObject:
   m_ObjectHideFlags: 0
@@ -14815,7 +14831,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9144320226889793361}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2

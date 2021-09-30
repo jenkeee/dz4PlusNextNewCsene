@@ -23,7 +23,7 @@ public class Settings : MonoBehaviour
             DontDestroyOnLoad(transform);
         }*/
         // ScipTutorSet(false);
-        finishTutor = scipTutor;
+        //finishTutor = scipTutor;
     }
     public static bool getScipTutor()
     {
@@ -50,11 +50,11 @@ public class Settings : MonoBehaviour
     {
         if (value == true)
         {
-            scipTutor = true;
+            finishTutor = true;
         }
         else
         {
-            scipTutor = false; //у нас дальше в коде отрицание, поэтому tut false тру 
+            finishTutor = false; 
         }
     }
 
@@ -62,6 +62,11 @@ public class Settings : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     //   scipTutor = test;
+        /*
+        if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return))
+        {
+         Debug.Log(scipTutor);
+        }
+     */
     }
 }
