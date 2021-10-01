@@ -11237,6 +11237,11 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &1182791165 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 164193852679302461, guid: 261bc858eacf9b54fb02c602add51e58, type: 3}
+  m_PrefabInstance: {fileID: 8471869523160264659}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1211298807
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13241,11 +13246,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000005, y: 2.296871, z: 0.41672972}
   m_Center: {x: -0.4999998, y: 1.1484355, z: -0.00000040233135}
---- !u!1 &1426865605 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2045208781, guid: 261bc858eacf9b54fb02c602add51e58, type: 3}
-  m_PrefabInstance: {fileID: 8471869523160264659}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1431898182 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 709908871495788894, guid: 626221d3dab75754b955e1789dcd5325, type: 3}
@@ -13916,6 +13916,11 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0000005, y: 2.296871, z: 0.41672972}
   m_Center: {x: -0.4999998, y: 1.1484355, z: -0.00000040233135}
+--- !u!4 &1516827518 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2569245418031079948, guid: 261bc858eacf9b54fb02c602add51e58, type: 3}
+  m_PrefabInstance: {fileID: 8471869523160264659}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1524320305
 GameObject:
   m_ObjectHideFlags: 0
@@ -14521,6 +14526,11 @@ Transform:
   m_Father: {fileID: 2062225264}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1553786408 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6642893763088648562, guid: 261bc858eacf9b54fb02c602add51e58, type: 3}
+  m_PrefabInstance: {fileID: 8471869523160264659}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1556094660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19546,10 +19556,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2241744698834018240, guid: 261bc858eacf9b54fb02c602add51e58, type: 3}
-      propertyPath: BublForLive
+    - target: {fileID: 8471869524135779856, guid: 261bc858eacf9b54fb02c602add51e58, type: 3}
+      propertyPath: sound_p_jump
       value: 
-      objectReference: {fileID: 1426865605}
+      objectReference: {fileID: 1553786408}
+    - target: {fileID: 8471869524135779856, guid: 261bc858eacf9b54fb02c602add51e58, type: 3}
+      propertyPath: sound_p_land
+      value: 
+      objectReference: {fileID: 1182791165}
+    - target: {fileID: 8471869524135779856, guid: 261bc858eacf9b54fb02c602add51e58, type: 3}
+      propertyPath: sound_p_steps
+      value: 
+      objectReference: {fileID: 1516827518}
     - target: {fileID: 8471869524135779857, guid: 261bc858eacf9b54fb02c602add51e58, type: 3}
       propertyPath: cameraa
       value: 
